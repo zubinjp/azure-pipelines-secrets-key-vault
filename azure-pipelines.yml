@@ -24,8 +24,8 @@ steps:
 - task: CopyFiles@2
   displayName: Copy Secrets File
   inputs:
-    Contents: secret.txt
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: 'secret.txt'
+    TargetFolder: 
 
 - task: PublishBuildArtifacts@1
   displayName: Publish Secrets File
