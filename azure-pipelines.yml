@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  vmImage: MyLocalHost
+  vmImage: MyLocalPool
 
 steps:
 - task: AzureKeyVault@2
