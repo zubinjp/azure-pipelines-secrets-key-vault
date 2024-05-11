@@ -8,17 +8,17 @@ steps:
 - task: AzureKeyVault@2
   displayName: Get Secrets from Key Vault
   inputs:
-    azureSubscription: 'spn-keyvault-devops'
-    KeyVaultName: 'keyvault019'
-    SecretsFilter: '*' # 'DatabasePassword'
+    azureSubscription: 'Project2'
+    KeyVaultName: 'key-vault-pjt'
+    SecretsFilter: '*' # 'StorageSAS'
     RunAsPreJob: false
 
 - task: CmdLine@2
   displayName: Write Secret into File
   inputs:
     script: |
-      echo $(DatabasePassword)
-      echo $(DatabasePassword) > secret.txt
+      echo $(StorageSAS)
+      echo $(StorageSAS) > secret.txt
       cat secret.txt
 
 - task: CopyFiles@2
