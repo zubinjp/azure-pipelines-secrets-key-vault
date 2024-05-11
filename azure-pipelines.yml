@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  vmImage: MyLocalPool
+  vmImage: ubuntu-latest
 
 steps:
 - task: AzureKeyVault@2
