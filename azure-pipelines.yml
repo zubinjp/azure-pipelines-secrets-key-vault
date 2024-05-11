@@ -17,8 +17,8 @@ steps:
   displayName: Write Secret into File
   inputs:
     script: |
-      echo $(StorageSAS)
-      echo $(StorageSAS) > secret.txt
+      echo $(SAS-token)
+      echo $(SAS-token) > secret.txt
       cat secret.txt
 
 - task: CopyFiles@2
