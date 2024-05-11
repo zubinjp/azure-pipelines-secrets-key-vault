@@ -11,8 +11,8 @@ steps:
     azureSubscription: 'Project2'
     KeyVaultName: 'key-vault-pjt'
     SecretsFilter: '*'
-    RunAsPreJob: true
-
+    RunAsPreJob: false
+    
 - task: CmdLine@2
   displayName: Write Secret into File
   inputs:
