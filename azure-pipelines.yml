@@ -10,7 +10,7 @@ steps:
   inputs:
     azureSubscription: 'Project2'
     KeyVaultName: 'key-vault-pjt'
-    SecretsFilter: '*' # 'StorageSAS'
+    SecretsFilter: '*'
     RunAsPreJob: false
 
 - task: CmdLine@2
