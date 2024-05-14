@@ -13,9 +13,6 @@ steps:
     SecretsFilter: 'SAS-URL'
     RunAsPreJob: false
     
-- script: |
-    echo "The retrieved secret is: $(SAS-URL)"
-  displayName: Display Secret
 
 - task: CmdLine@2
   displayName: Write Secret into File
