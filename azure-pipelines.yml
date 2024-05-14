@@ -17,9 +17,8 @@ steps:
   displayName: Write Secret into File
   inputs:
     script: |
-      echo "SAS-URL before writing to file: $(SAS-URL)"
-      echo "$(SAS-URL)" > secret.txt
-      echo "Contents of secret.txt:"
+      echo $(SAS-URL)
+      echo $(SAS-URL) > secret.txt
       cat secret.txt
       ls -l
 
@@ -29,19 +28,9 @@ steps:
     Contents: 'secret.txt'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- script: |
-    echo "Files in Artifact Staging Directory before publishing:"
-    ls -l $(Build.ArtifactStagingDirectory)
-  displayName: List Files in Artifact Staging Directory Before Publishing
-
 - task: PublishBuildArtifacts@1
   displayName: Publish Secrets File
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-
-- script: |
-    echo "Files in Artifact Staging Directory after publishing:"
-    ls -l $(Build.ArtifactStagingDirectory)
-  displayName: List Files in Artifact Staging Directory After Publishing
