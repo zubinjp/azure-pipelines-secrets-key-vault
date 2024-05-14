@@ -20,6 +20,7 @@ steps:
       echo $(SAS-URL)
       echo $(SAS-URL) > secret.txt
       cat secret.txt
+      ls -l
 
 - task: CopyFiles@2
   displayName: Copy Secrets File
