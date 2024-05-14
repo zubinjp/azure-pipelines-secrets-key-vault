@@ -10,17 +10,18 @@ steps:
   inputs:
     azureSubscription: 'Project2'
     KeyVaultName: 'key-vault-pjt'
-    SecretsFilter: '*'
+    SecretsFilter: 'SAS-URL'
     RunAsPreJob: false
     
+- script: |
+    echo "The retrieved secret is: $(SAS-URL)"
+  displayName: Display Secret
+
 - task: CmdLine@2
   displayName: Write Secret into File
   inputs:
     script: |
-      echo $(SAS-URL)
-      echo $(SAS-URL) > secret.txt
-      cat secret.txt
-      ls -l
+      echo "$(SAS-URL)" > secret.txt
 
 - task: CopyFiles@2
   displayName: Copy Secrets File
